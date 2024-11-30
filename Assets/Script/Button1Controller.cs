@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using Oculus.Interaction.Editor;
 using UnityEngine;
 
-public class KeyController : MonoBehaviour
+public class Button1Controller : MonoBehaviour
 {
-    private float velocity_rot = 150f;
-    public HingeJoint hingeJoint;
+    public DoorOne doorOne; // La puerta que queremos abrir
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up, velocity_rot * Time.deltaTime, Space.World);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            hingeJoint.useMotor = true;
+            doorOne.PresionarBoton();
         }
-        
     }
+
 }
+
+
