@@ -7,6 +7,7 @@ public class Button2Controller : MonoBehaviour
     public DoorTwo doorTwo; // La puerta que queremos abrir
     public DoorOne doorOne; // La puerta que queremos abrir
     // Start is called before the first frame update
+    public AudioSource audioSource;
     void Start()
     {
 
@@ -24,6 +25,7 @@ public class Button2Controller : MonoBehaviour
         {
             doorTwo.PresionarBoton();
             doorOne.PresionarBoton();
+            audioSource.Play();
         }
     }
 }

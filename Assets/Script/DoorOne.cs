@@ -9,6 +9,7 @@ public class DoorOne : MonoBehaviour
     private Vector3 rotacionAbierta = new Vector3(0f, 202.806702f, 0f); // Rotación de la puerta abierta
     private Vector3 posicionCerrada = new Vector3(-17.9459991f, 7.51463509f, 18.8260002f); // Posición de la puerta cerrada
     private Vector3 rotacionCerrada = new Vector3(0f, 270f, 0f); // Rotación de la puerta cerrada
+    public AudioSource audioSource;
 
     private float temporizador = 0f;
     private bool botonPresionado = false;
@@ -48,6 +49,8 @@ public class DoorOne : MonoBehaviour
             puerta.position = posicionAbierta;
             puerta.eulerAngles = rotacionAbierta;
             Debug.Log("Puerta abierta.");
+
+            audioSource.Play();
         }
     }
 
