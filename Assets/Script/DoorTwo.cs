@@ -48,6 +48,8 @@ public class DoorTwo : MonoBehaviour
             puerta.eulerAngles = rotacionAbierta;
             Debug.Log("Puerta abierta.");
             audioSource.Play();
+
+            Debug.Log("Abro la puerta 2\n");
         }
     }
 

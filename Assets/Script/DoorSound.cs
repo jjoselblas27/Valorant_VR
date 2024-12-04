@@ -26,6 +26,7 @@ public class DoorSound : MonoBehaviour
         if (angleDelta > soundThreshold && !audioSource.isPlaying)
         {
             audioSource.Play();
+            Debug.Log("Abro puerta con llave\n");
         }
 
         // Actualiza el ángulo previo

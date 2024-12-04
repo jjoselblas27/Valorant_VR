@@ -5,7 +5,6 @@ using UnityEngine;
 public class Button1Controller : MonoBehaviour
 {
     public DoorOne doorOne; // La puerta que queremos abrir
-    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,6 @@ public class Button1Controller : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             doorOne.PresionarBoton();
-            audioSource.Play();
         }
     }
 
