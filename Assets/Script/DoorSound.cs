@@ -5,21 +5,21 @@ using UnityEngine;
 public class DoorSound : MonoBehaviour
 {
     public AudioSource audioSource; // Arrastra el AudioSource aquí desde el inspector.
-    public HingeJoint hingeJoint;   // Arrastra el Hinge Joint de la puerta.
+    public HingeJoint doorHingeJoint;   // Arrastra el Hinge Joint de la puerta.
     private float previousAngle;   // Ángulo previo de la puerta.
     private float soundThreshold = 2f; // Diferencia de ángulo mínima para reproducir sonido.
 
     void Start()
     {
-        if (hingeJoint == null) hingeJoint = GetComponent<HingeJoint>();
+        if (doorHingeJoint == null) doorHingeJoint = GetComponent<HingeJoint>();
         if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        previousAngle = hingeJoint.angle; // Inicializa con el ángulo actual.
+        previousAngle = doorHingeJoint.angle; // Inicializa con el ángulo actual.
     }
 
     void Update()
     {
         // Detecta el movimiento de la puerta
-        float currentAngle = hingeJoint.angle;
+        float currentAngle = doorHingeJoint.angle;
         float angleDelta = Mathf.Abs(currentAngle - previousAngle);
 
         // Si la puerta se mueve más que el umbral, reproduce el sonido

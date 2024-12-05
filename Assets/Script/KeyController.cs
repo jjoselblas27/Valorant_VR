@@ -6,7 +6,7 @@ using UnityEngine;
 public class KeyController : MonoBehaviour
 {
     private float velocity_rot = 150f;
-    public HingeJoint hingeJoint;
+    public HingeJoint keyHingeJoint;
     public DoorTwo doorTwo;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class KeyController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            hingeJoint.useMotor = true;
+            keyHingeJoint.useMotor = true;
             doorTwo.PresionarBoton();
         }
         
